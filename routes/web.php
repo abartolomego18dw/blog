@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', 'BlogController@index')->name('posts.index');
+
+Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
+
+Route::resource('posts', 'BlogController');
+
+Route::resource('post', 'PostController');
