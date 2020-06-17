@@ -23,3 +23,5 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::resource('posts', 'BlogController');
 
 Route::resource('post', 'PostController');
+
+
