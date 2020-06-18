@@ -24,4 +24,13 @@ Route::resource('posts', 'BlogController');
 
 Route::resource('post', 'PostController');
 
+Route::get('admin', 'AdminController@index')->name('admin.index');
+
+Route::get('admin/{id}', 'AdminController@show')->name('admin.show');
+
+Route::get('admin/{id}/edit', 'AdminController@edit')->name('admin.edit');
+
+Route::put('admin/{id}', 'AdminController@update')->name('admin.update');
+
+
 
