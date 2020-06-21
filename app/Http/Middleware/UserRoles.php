@@ -16,6 +16,7 @@ class UserRoles
      */
     public function handle($request, Closure $next, $role)
     {
+        
         $user = User::find(auth()->user()->id);
         if ($user->hasRole($role))
             return $next($request);

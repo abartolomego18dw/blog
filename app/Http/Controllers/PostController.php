@@ -16,6 +16,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     
+    
+
     public function index()
     {
         
@@ -42,7 +44,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post;
-        $this->authorize('store',$post);
+        $this->authorize('view',$post);
         $post->title = $request->input('title');
         $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');

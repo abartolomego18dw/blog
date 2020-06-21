@@ -20,6 +20,14 @@ class UserPolicy
         
     }
 
+    public function before($user, $ability)
+    {
+        if($user->hasrole(['admin']))
+        {
+            return true;
+        }
+    }
+
     public function view(User $authUser, Post $post)
     {
         return $authUser->id === $post->user_id; 
